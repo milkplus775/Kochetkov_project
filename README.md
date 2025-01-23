@@ -117,8 +117,8 @@ Jказываемся в текстовом редакторе, чтобы пр�
 
 Заходим на сайт `localhost:3000`
     User & Password GRAFANA: `admin`
-    Код графаны: `3000`
-    Код прометеуса: `http://prometheus:9090`
+    Код grafana: `3000`
+    Код prometheus: `http://prometheus:9090`
 В меню переходим на вкладку Dashboards, создаем Dashboard
     ждем кнопку +Add visualization, а после "Configure a new data source"
     выбираем Prometheus
