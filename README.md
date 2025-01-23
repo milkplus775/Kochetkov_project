@@ -1,30 +1,28 @@
 # Kochetkov_project
 
-Перед тем как начать установку нужно скачать Linux Oracle на VirtualBox, для этого:
+Перед тем как начать установку нужно скачать открытый дистрибутив Linux Oracle на VirtualBox, для этого:
 
-Нужно иметь дистрибутив Linux, на нём выделить 2+ ядер, 4096+ МБ оперативы.
-При установки операционной системы, выбрать английский язык.
+Нужно иметь дистрибутив Linux, на нём выделить 2+ ядер, 4096+ МБ оперативной памяти.
+При установке операционной системы выберем английский язык.
 
-Далее переходим к установке docker с использованием grafana, вводим следующие команды:
+Далее переходим к установке docker с использованием grafana, для этого вводим команду:
 
 1. `sudo yum install wget`
 
-она установит утилиту wget на вашу систему
+Она установит утилиту wget на вашу систему
 ![image](https://github.com/user-attachments/assets/b2650d1d-f531-4e25-9842-012e9076cc60)
 
 2. `sudo wget -P /etc/yum.repos.d/ https://download.docker.com/linux/centos/docker-ce.repo`
 
-Скачаем файл репозитория
+Скачаем файл репозитория и docker
+![image](https://github.com/user-attachments/assets/ffdd913c-33d2-4489-a59c-581928dbc968)
 ![image](https://github.com/user-attachments/assets/8974b604-8238-4c21-aa7e-33faa8bc1952)
 
 3. `sudo yum install docker-ce docker-ce-cli containerd.io`
 
-И docker
-![image](https://github.com/user-attachments/assets/ffdd913c-33d2-4489-a59c-581928dbc968)
-
 4. `sudo systemctl enable docker --now`
 
-Запускаем его, затем разрешаем автозапуск
+Открываем, затем даём разрешение на автозапуск
 
 5. `sudo yum install curl`
 
@@ -38,17 +36,17 @@
 
 7. `sudo curl -L "https://github.com/docker/compose/releases/download/$COMVER/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose`                        
 
-Теперь скачаем скрипт docker-compose последней версии и помещаем его в каталог /usr/bin
+Теперь загружаем скрипт docker-compose последней версии, помещаем его в каталог /usr/bin
 
 ![image](https://github.com/user-attachments/assets/6f4a7ffc-ff0c-4155-a082-07d7d0efc5e5)
 
 8. `sudo chmod +x /usr/bin/docker-compose`
 
-Предоставим права на выполнение файла docker-compose.
+Выдаём права на выполнение файла docker-compose.
 
 9. `docker-compose --version`
 
-Проверка установленной версии Docker Compose.
+Происходит проверка установленной версии Docker Compose.
 
 ![image](https://github.com/user-attachments/assets/5a7024a8-b070-489c-a21b-1799118f110a)
 
@@ -61,7 +59,7 @@
 
 11. `cd grafana_stack_for_docker`
     
-Переход в папку
+Произойдёт переход в папку
 
 12.`sudo mkdir -p /mnt/common_volume/swarm/grafana/config`
 
@@ -69,11 +67,11 @@
 
 13. `sudo mkdir -p /mnt/common_volume/grafana/{grafana-config,grafana-data,prometheus-data}`
 
-Команда создаёт структуру каталогов для Grafana и связанных с ней компонентов, если они ещё не существуют.
+И создаёт структуру каталогов для Grafana и связанных с ней компонентов.
 
 14. `sudo chown -R $(id -u):$(id -g) {/mnt/common_volume/swarm/grafana/config,/mnt/common_volume/grafana}`
 
-Все файлы и каталоги в данных директориях будут переданы в собственность текущему пользователю и его группе
+Все файлы и каталоги в директориях будут переданы в собственность текущему пользователю.
 
 15.` touch /mnt/common_volume/grafana/grafana-config/grafana.ini`
 
@@ -81,11 +79,11 @@
 
 16. `cp config/* /mnt/common_volume/swarm/grafana/config/`
 
-Эта команда копирует все файлы и подкаталоги из директории config в директорию /mnt/common_volume/swarm/grafana/config/
+Данная команда копирует все файлы и подкаталоги из директории config в директорию /mnt/common_volume/swarm/grafana/config/
 
 17. `mv grafana.yaml docker-compose.yaml `
 
-Эта команда переименовывает файл grafana.yaml в docker-compose.yaml. Ничего не покажет, но можно проверить при помощи команды ls
+Данная команда переименовывает файл grafana.yaml в docker-compose.yaml. Ничего не покажет, но можно проверить при помощи команды ls
 
 18.` sudo docker compose up -d`
 
@@ -98,11 +96,9 @@
 
 Открывает файл docker-compose.yaml в текстовом редакторе vi с правами суперпользователя, что позволяет вам редактировать его содержимое.
 
-Нас перекинет в текстовый редактор
+Jказываемся в текстовом редакторе, чтобы произвести изменения в нём нажимаем insert
 
-Что-бы что-то изменить в редакторе нужно нажать insert на клавиатуре
-
-Что бы сохранить что-то в этом документе нажимаем Esc пишем :wq! В этом текставом редакторе мы должны поставить node-exporter после services
+Далее для сохранения изменений нажимаем Esc, пишем :wq! В этом текстовом редакторе мы должны поставить node-exporter после services
 
 ![image](https://github.com/user-attachments/assets/3b7cdd9c-0a33-4d84-ae8d-d56f99fa35ac)  
 
@@ -146,7 +142,7 @@
 
 1. `cd grafana_stack_for_docker`
 
-Команда cd grafana_stack_for_docker изменяет текущий рабочий каталог на каталог grafana_stack_for_docker.
+Данная команда изменит текущий рабочий каталог на каталог grafana_stack_for_docker.
 
 2. `sudo vi docker-compose.yaml`
 
