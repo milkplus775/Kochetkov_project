@@ -159,8 +159,8 @@
 ![image](https://github.com/user-attachments/assets/b25ebd84-0173-4e2c-9fe5-c94b7c290a37)
 
 Захом в connection
-там где мы писали http//:prometheus:9090 пишем http:victoriametrics:9090 И заменяем имя из "Prometheus-2" в "Vika"
-нажимаем на dashboards add visualition выбираем "Vika"
+там где мы писали http//:prometheus:9090 пишем http:victoriametrics:9090 И заменяем имя из "Prometheus-2" в "Misha"
+нажимаем на dashboards add visualition выбираем "Misha"
 снизу меняем на "code"
 Переходим в терминал и пишем
 
@@ -190,7 +190,8 @@
 
 Копируем переменную OILCOINT_metric1 и вставляем в code
 
-![image](https://github.com/user-attachments/assets/739a9d3f-163b-40df-bc74-f5b76613a5f5)
+![image](https://github.com/user-attachments/assets/a9a7f22d-8770-44b7-9ca7-13ec8895f926)
+
 
 
 
