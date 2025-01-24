@@ -1,5 +1,6 @@
 # Kochetkov_project
-https://github.com/user-attachments/assets/83cfa9c5-2a02-41db-bbd7-559ab54600e5)
+![image](https://github.com/user-attachments/assets/83cfa9c5-2a02-41db-bbd7-559ab54600e5)
+
 Перед тем как начать установку нужно скачать открытый дистрибутив Linux Oracle на VirtualBox, для этого:
 
 Нужно иметь дистрибутив Linux, на нём выделить 2+ ядер, 4096+ МБ оперативной памяти.
